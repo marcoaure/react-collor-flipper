@@ -1,7 +1,10 @@
+import { MouseEventHandler } from "react";
+
 interface ButtonProps {
-    text: string
+    text: string | null,
+    callback: MouseEventHandler
 }
 
-const Button = (props: ButtonProps) => <button>{props.text}</button>;
+const Button = (props: ButtonProps) => <button onClick={props?.callback}>{props?.text}</button>;
 
 export default Button;
