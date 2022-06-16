@@ -21,5 +21,16 @@ describe("<Button />", () => {
         fireEvent.click(button)
         expect(someAction).toBeCalled()
     })
+
+    it("should someAction be called 3 times if button has 3 clicks", () => {
+        const someAction = jest.fn()
+        render(<Button text={"This is an Test"} callback={someAction} />)
+        
+        const button = screen.getByRole("button")
+        fireEvent.click(button)
+        fireEvent.click(button)
+        fireEvent.click(button)
+        expect(someAction).toBeCalledTimes(3)
+    })
 })
 
