@@ -9,11 +9,11 @@ describe("<ColorLabel />", () => {
         expect(colorLabel).toBeTruthy()
     })
 
-    it("should have an text by props", () => {
-        render(<ColorLabel text={"this is an test"} />)
+    it("should have an text: `Background Color: red` by props", () => {
+        render(<ColorLabel color={"red"} />)
         const colorLabel = screen.getByTestId("color-label")
         
-        expect(colorLabel.textContent).toBe("this is an test")
+        expect(colorLabel.textContent).toBe("Background Color: red")
     })
 })
 
